@@ -1,19 +1,17 @@
 @font-face {
-  font-family: "roboto";
-  src: url("polices/Roboto-Regular.ttf");
+  font-family: "calibri";
+  src: url("polices/calibri.ttf");
 }
 
 @font-face {
-  font-family: "shrikhand";
-  src: url("polices/Shrikhand-Regular.ttf");
+  font-family: "calibri-bold";
+  src: url("polices/calibri-bold.ttf");
 }
-@font-face {
-  font-family: "roboto-bold";
-  src: url("polices/Roboto-Bold.ttf");
-}
-$orange: #cc993b;
+
+$orange: #f79a44;
+$orangedark:#ce5709;
 $rose: #a249aa;
-$violet: #7b2de0;
+$violet:#8014d2;
 $blanc: #ffffff;
-$noir:#000000;
+$noir:black;
 $gris:#CAC7C7;

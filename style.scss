@@ -1,134 +1,333 @@
 @import "vars";
 
 
-body{
-    background-color: $orange;
+body {
+    background: linear-gradient(90deg, rgba(196,137,19,1) 0%, rgba(128,20,210,1) 100%);
+    margin: 0;
+    font-family: "calibri";
 }
-#logo img{
-height:80px;
-width:170px;
+.strong{
+    font-family: "calibri-bold";
+   
 }
-.navbar{
+
+#logo img {
+    height: 90px;
+    width: 180px;
+    border-radius: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
     background-color: $violet;
     padding-right: 25px;
-    margin-bottom: 25px;
-}
-.navbar-expand-md .navbar-nav .nav-link {
-padding-left:50px;
-padding-right: 30px;
-font-size: large;
-}
-h1{
-    border:1px $rose solid;
-    color:$blanc;
-    text-align: center;
-    margin-top: 20px;
-    width:fit-content;
-    margin:auto;
-    padding:5px 15px 5px 15px;
-    border-radius: 30px;
-    background-color: $rose;
-}
-#cameras,#cameras2{
-    margin-top: 40px;
-    justify-content: space-evenly;
-    display:flex;
+    padding-left: 50px;
+    padding-right: 40px;
+    font-size: large;
+    height: 90px;
 
 }
-.carte{
-    border:2px $rose solid;
-    border-radius:10px ;
-    width: 320px;
-    padding:10px;
+
+.navliens {
+    display: flex;
+    list-style-type: none;
+    padding-top: 10px;
+    font-size: 20px;
+
+}
+
+.liens {
+
+    text-decoration: none;
+    margin-left: 60px;
+    color: white;
+}
+.liens:hover{
+    color:$orange;
+}
+
+h1 {
+    border: 1px transparent solid;
+    color: $blanc;
+    text-align: center;
+    margin-top: 20px;
+    width: fit-content;
+    margin: auto;
+    padding: 5px 15px 5px 15px;
+border-radius:0 0 30px 30px ;
+    background-color: $violet;
+}
+h2{
+    text-align: center;
+    font-family: "calibri-bold";
+}
+
+#cameras,
+#cameras2 {
+    margin-top: 40px;
+    justify-content: space-evenly;
+    display: flex;
+
+}
+
+.carte {
+    border: 2px $rose solid;
+    border-radius: 10px;
+    padding: 10px;
     margin: 10px;
-    background-color:$gris;
+    background-color: $gris;
 }
-.zurss50s{
+.voirprod{
+    color: white;
+    text-align: center;
+    justify-content: center;
+    border:1px solid $rose;
+    box-shadow: 1px 2px 2px $violet;
+    background-color: $rose;
+    border-radius: 30px;
+    width:140px;
+    margin: auto;
+    height:40px;
+    font-size: 18px;
+    
+}
+
+.voirprod:hover{
+    background-color: $violet;
+    box-shadow:1px 2px 2px $rose;
+}
+
+
+.zurss50s,.pzurss50s {
     background-image: url(images/vcam_1.jpg);
-     
+
 }
-.hirsh400dts{
+
+.hirsch400dts,.phirsch400dts {
     background-image: url(images/vcam_2.jpg);
 }
-.franckjs105{
-background-image: url(images/vcam_3.jpg);
+
+.franckjs105,.pfranckjs105 {
+    background-image: url(images/vcam_3.jpg);
 }
-.kurostts{
+
+.kurostts,.pkurostts {
     background-image: url(images/vcam_4.jpg);
 }
-.katatone{
+
+.katatone,.pkatatone {
     background-image: url(images/vcam_5.jpg);
 }
 
-.zurss50s,.hirsh400dts,.franckjs105,.kurostts,.katatone{
-    height:250px;
+.zurss50s,
+.hirsch400dts,
+.franckjs105,
+.kurostts,
+.katatone {
+    height: 250px;
     width: 300px;
     background-size: cover;
     background-position: center;
-    margin-left: -2px;
-    margin-top: -2px;
     border-radius: 5px;
 }
-.carte p{
+
+.carte p {
     margin-top: 10px;
     text-align: center;
+    color: $noir;
+    font-size: 18px;
+}
+.carte strong{
+    font-size: 22px;
+    font-family: "calibri-bold";
     color:$violet;
 }
-.carte a{
+
+.carte a {
     text-decoration: none;
 }
-.carte a :hover{
-    color:$rose;
+
+
+footer {
+    display: flex;
+    margin-top: 30px;
+    height: 40px;
+    background-color: $violet;
+    padding-bottom: 18px;
 }
 
-footer{
-   display:flex;
-   justify-content: center;
-    margin-top: 30px;
-    height:40px;
-    background-color:$violet;
-}
 footer ul {
     list-style-type: none;
     padding-top: 5px;
     padding-right: 50px;
     text-align: center;
+
 }
 
 footer a {
-    color: $blanc;  
+    color: $blanc;
+    text-decoration: none;
+    font-size: 20px;
+
+}
+
+footer :hover a {
+    text-decoration: none;
+    color: $orange;
+}
+
+#produit {
+    display: flex;
+    justify-content: center;
+
+}
+
+.cartedesc {
+    margin-top: 100px;
+    margin-bottom: 122px;
+    border: 2px $rose solid;
+    background-color: $gris;
+    border-radius: 10px;
+    width: 500px;
+    padding: 10px;
+}
+.cartedesc p strong{
+   display: block;
+   padding-top:50px;
+    font-size: 17px;
+}
+
+.pzurss50s,.phirsch400dts,.pfranckjs105,.pkurostts,.pkatatone {
+    height: 330px;
+    width: auto;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+
+button,
+input {
+    border-radius: 5px;
+    background-color: $rose;
+    color: white;
+    padding: 10px;
+    border: none;
+    display: block;
+    margin: auto;
+}
+
+button,
+input:hover {
+    background-color: $violet;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    padding-right: 10px;
+    color: $violet;
+}
+
+select {
+    margin-top: 15px;
+    font-size: .9rem;
+    padding: 2px 5px;
+    color: $blanc;
+    background:$violet ;
+}
+#erreur404{
+    text-align: center;
     
 }
-footer :hover a{
-    text-decoration: none;
-    color:$orange;
+.oups{
+    font-size: 80px;
+    color:$blanc;
 }
-@media screen and (max-width: 1024px){
-    #cameras,#cameras2{
+.pagenotfound{
+    font-size: 40px;
+    margin-bottom: 40px;
+    color:$blanc;
+}
+.fleche{
+    font-size: 80px;
+    color:$blanc;
+}
+.btnretour{
+    border:1px $rose solid;
+    box-shadow: 1px 2px 2px $rose;
+    padding: 25px;
+    font-size: 25px;
+    border-radius: 50px;
+}
+.btnretour:hover{
+   background-color:$rose;
+   box-shadow: 1px 2px 2px $violet;
+}
+
+@media screen and (max-width: 1024px) {
+    .navbar {
+        padding-left: 20px;
+            margin: 0;
+            padding: 0;
+    }
+
+    #cameras,
+    #cameras2 {
         flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin-top: 0;
-            }
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 0;
+    }
 }
 
 
 @media screen and (max-width: 767px) {
-    #cameras,#cameras2{
-flex-direction: row;
+
+    h1{
+        margin-bottom: 10px;
+    }
+    .navliens {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding: 5px;
+        margin: 0;
+    }
+
+    .liens {
+        margin: 5px;
+    }
+    #produit{
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+    .cartedesc{
+        margin:0;
+    }
+    #cameras,
+    #cameras2 {
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
-    footer{
-        height:auto;
+
+    footer {
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: auto;
         width: 100%;
     }
-    footer ul{
+
+    footer ul {
         padding-right: 10px;
+        text-align: left;
     }
-    .navbar-expand-md .navbar-nav .nav-link{
-        padding-right: 0;
-        padding-left: 0;
-        font-size: medium;
-    }
+
+}
+@media screen and (max-width: 350px){
+    .navliens{
+        font-size: 15px;
+}
 }

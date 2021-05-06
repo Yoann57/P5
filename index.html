@@ -5,61 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" type="image/png" href="images/favicon.jpg">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/fb0255ef6d.js" crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="style.css" />
 
     <title>Orinoco</title>
 </head>
 <body>
     <header>
-    <nav class="navbar navbar-expand-md navbar-light">
+    <nav class="navbar">
         <div id="logo">
             <img src="images/logo.jpg" alt="Logo Orinoco" />
        </div>
-        <ul class="navbar-nav ml-auto">
+        <ul class="navliens">
             <li class="nav-item">
                 <a 
-                class="nav-link text-light" href="#">ACCEUIL</a></li>
+                class="liens" href="index.html">
+                <i class="fas fa-home"></i>
+                ACCEUIL</a></li>
             <li class="nav-item">
                 <a 
-                class="nav-link text-light" href="#">MES COMMANDES</a></li>
+                class="liens" href="#">
+                <i class="fas fa-check"></i>
+                COMMANDES</a></li>
             <li 
             class="nav-item">
             <a
-             class="nav-link text-light" href="#">PANIER</a></li>
+             class="liens" href="#">
+             <i class="fas fa-cart-plus"></i>
+             PANIER
+            </a></li>
 
         </ul>
 </nav>
     </header>
     <h1>Nos Produits</h1>
  <div id="cameras">
-          <div class="carte"><a href="">
+          <div class="carte"><a href="Zurss50s.html">
                     <div class="zurss50s"></div>
-                    <p><strong>ZURSS 50S</strong></p>
-                    <p>499,00€</p>
+                    <p><strong>Zurss 50S</strong></p>
+                        <p>499 €</p>
+                    <form>
+                        <input class="voirprod" type="button" value="Commander">
+                      </form>                   
                </a></div>
-               <div class="carte"><a href="">
-                <div class="hirsh400dts"></div>
+               <div class="carte"><a href="Hirsch400DTS.html">
+                <div class="hirsch400dts"></div>
                 <p><strong>Hirsh 400DTS</strong></p>
-                <p>3099,00€</p>
+                <p>3099 €</p>
+                <form>
+                    <input class="voirprod" type="button" value="Commander">
+                  </form> 
            </a></div>
-           <div class="carte"><a href="">
+           <div class="carte"><a href="Franckjs105.html">
             <div class="franckjs105"></div>
             <p><strong>Franck JS 105</strong></p>
-            <p>2099,00€</p>
+            <p>2099 €</p>
+            <form>
+                <input class="voirprod" type="button" value="Commander">
+              </form> 
        </a></div>
        </div>
 <div id="cameras2">
-    <div class="carte"><a href="">
+    <div class="carte"><a href="Kurostts.html">
         <div class="kurostts"></div>
         <p><strong>Kuros TTS</strong></p>
-        <p>1599,00€</p>
+        <p>1599 €</p>
+        <form>
+            <input class="voirprod" type="button" value="Commander">
+          </form> 
    </a></div>
-   <div class="carte"><a href="">
+   <div class="carte"><a href="Katatone.html">
     <div class="katatone"></div>
     <p><strong>Katatone</strong></p>
-    <p>599,00€</p>
+    <p>599 €</p>
+    <form>
+        <input class="voirprod" type="button" value="Commander">
+      </form> 
 </a></div>
 
 </div>
@@ -71,7 +94,9 @@
     <li class=""><a href="#">À propos</a></li>
    </ul>
    <ul>
-    <li class=""><a href="#">Contact</a></li>
+    <li class=""><a href="mailto:orinoco@mail.fr">
+        <i class="far fa-envelope"></i>
+        Contact</a></li>
    </ul>
 </footer>
 </body>
