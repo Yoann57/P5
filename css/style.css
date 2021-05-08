@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "calibri";
   src: url("polices/calibri.ttf");
@@ -35,9 +36,9 @@ body {
   background-color: #8014d2;
   padding-right: 25px;
   padding-left: 50px;
-  padding-right: 40px;
   font-size: large;
   height: 90px;
+  width: 1444px;
 }
 
 .navliens {
@@ -45,7 +46,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   list-style-type: none;
-  padding-top: 10px;
+  padding: 25px 10px 10px 10px;
   font-size: 20px;
 }
 
@@ -57,6 +58,7 @@ body {
 
 .liens:hover {
   color: #f79a44;
+  cursor: pointer;
 }
 
 h1 {
@@ -76,6 +78,16 @@ h1 {
 h2 {
   text-align: center;
   font-family: "calibri-bold";
+}
+
+h3 {
+  font-family: "calibri-bold";
+  color: #8014d2;
+  text-align: center;
+  border-bottom: 2px #a249aa solid;
+  padding-bottom: 19px;
+  border-radius: 20px;
+  font-size: 20px;
 }
 
 #cameras,
@@ -103,15 +115,15 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px solid #a249aa;
   -webkit-box-shadow: 1px 2px 2px #8014d2;
           box-shadow: 1px 2px 2px #8014d2;
   background-color: #a249aa;
   border-radius: 30px;
   width: 140px;
   margin: auto;
-  height: 40px;
+  height: 30px;
   font-size: 18px;
+  padding-top: 7px;
 }
 
 .voirprod:hover {
@@ -120,24 +132,29 @@ h2 {
           box-shadow: 1px 2px 2px #a249aa;
 }
 
-.zurss50s, .pzurss50s {
-  background-image: url(images/vcam_1.jpg);
+.zurss50s,
+.pzurss50s {
+  background-image: url(../images/vcam_1.jpg);
 }
 
-.hirsch400dts, .phirsch400dts {
-  background-image: url(images/vcam_2.jpg);
+.hirsch400dts,
+.phirsch400dts {
+  background-image: url(../images/vcam_2.jpg);
 }
 
-.franckjs105, .pfranckjs105 {
-  background-image: url(images/vcam_3.jpg);
+.franckjs105,
+.pfranckjs105 {
+  background-image: url(../images/vcam_3.jpg);
 }
 
-.kurostts, .pkurostts {
-  background-image: url(images/vcam_4.jpg);
+.kurostts,
+.pkurostts {
+  background-image: url(../images/vcam_4.jpg);
 }
 
-.katatone, .pkatatone {
-  background-image: url(images/vcam_5.jpg);
+.katatone,
+.pkatatone {
+  background-image: url(../images/vcam_5.jpg);
 }
 
 .zurss50s,
@@ -155,7 +172,7 @@ h2 {
 .carte p {
   margin-top: 10px;
   text-align: center;
-  color: black;
+  color: #000000;
   font-size: 18px;
 }
 
@@ -197,6 +214,7 @@ footer :hover a {
   color: #f79a44;
 }
 
+/* Page details produit */
 #produit {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -207,9 +225,9 @@ footer :hover a {
 }
 
 .cartedesc {
+  border: 2px #a249aa solid;
   margin-top: 100px;
   margin-bottom: 122px;
-  border: 2px #a249aa solid;
   background-color: #CAC7C7;
   border-radius: 10px;
   width: 500px;
@@ -218,11 +236,15 @@ footer :hover a {
 
 .cartedesc p strong {
   display: block;
-  padding-top: 50px;
+  padding-top: 20px;
   font-size: 17px;
 }
 
-.pzurss50s, .phirsch400dts, .pfranckjs105, .pkurostts, .pkatatone {
+.pzurss50s,
+.phirsch400dts,
+.pfranckjs105,
+.pkurostts,
+.pkatatone {
   height: 330px;
   width: auto;
   background-size: cover;
@@ -234,6 +256,8 @@ button,
 input {
   border-radius: 5px;
   background-color: #a249aa;
+  -webkit-box-shadow: 1px 2px 2px #8014d2;
+          box-shadow: 1px 2px 2px #8014d2;
   color: white;
   padding: 10px;
   border: none;
@@ -244,6 +268,8 @@ input {
 button,
 input:hover {
   background-color: #8014d2;
+  -webkit-box-shadow: 1px 2px 2px #a249aa;
+          box-shadow: 1px 2px 2px #a249aa;
 }
 
 label {
@@ -253,14 +279,33 @@ label {
   color: #8014d2;
 }
 
+.quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+}
+
+input#quantité {
+  background-color: #8014d2;
+  padding-left: 5px;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  border-left: 5px #8014d2 solid;
+}
+
 select {
   margin-top: 15px;
   font-size: .9rem;
   padding: 2px 5px;
   color: #ffffff;
   background: #8014d2;
+  -webkit-box-shadow: 1px 2px 2px #a249aa;
+          box-shadow: 1px 2px 2px #a249aa;
 }
 
+/* Page Erreur 404 */
 #erreur404 {
   text-align: center;
 }
@@ -282,7 +327,6 @@ select {
 }
 
 .btnretour {
-  border: 1px #a249aa solid;
   -webkit-box-shadow: 1px 2px 2px #a249aa;
           box-shadow: 1px 2px 2px #a249aa;
   padding: 25px;
@@ -294,6 +338,44 @@ select {
   background-color: #a249aa;
   -webkit-box-shadow: 1px 2px 2px #8014d2;
           box-shadow: 1px 2px 2px #8014d2;
+}
+
+.txtredirige {
+  text-align: center;
+  color: #ffffff;
+  margin-top: 45px;
+  font-size: 20px;
+}
+
+#counter {
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+/* Page Panier */
+#panier {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.paniergauche {
+  border: 2px #a249aa solid;
+  background-color: #CAC7C7;
+  width: 62%;
+  height: 600px;
+  border-radius: 20px;
+  margin: 20px 0 20px 20px;
+}
+
+.panierdroite {
+  border: 2px #a249aa solid;
+  background-color: #CAC7C7;
+  border-radius: 20px;
+  margin: 20px 20px 20px 0;
+  width: 35%;
+  height: 600px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -322,15 +404,6 @@ select {
     margin-bottom: 10px;
   }
   .navliens {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     padding: 5px;
     margin: 0;
   }
@@ -371,13 +444,23 @@ select {
     width: 100%;
   }
   footer ul {
-    padding-right: 10px;
+    padding: 10px;
     text-align: left;
+    margin: 0;
+  }
+  footer li {
+    text-align: center;
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 550px) {
   .navliens {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     font-size: 15px;
   }
 }

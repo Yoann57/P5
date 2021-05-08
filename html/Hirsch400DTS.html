@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/fb0255ef6d.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/fonctions.js"></script>
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <title>Orinoco</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <div id="logo">
+                <img src="../images/logo.jpg" alt="Logo Orinoco" />
+            </div>
+            <nav class="navliens">
+                <a class="liens" href="index.html">
+                    <i class="fas fa-home"></i>
+                    ACCEUIL</a>
+                <a class="liens" href="#">
+                    <i class="fas fa-check"></i>
+                    COMMANDES</a>
+                <a class="liens" href="../html/Panier.html">
+                    <i class="fas fa-cart-plus"></i>
+                    PANIER
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="produit">
+        <div class="cartedesc">
+            <div class="phirsch400dts"></div>
+        </div>
+        <div class="cartedesc">
+            <h2>Hirsch 400DTS</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidiunt ut labor et
+                dolor magna aliqua.</p>
+            <label for="objectif-select">Choix de l'objectif :</label>
+
+            <select name="objectif" id="objectif-select">
+                <option value="obj">50mm 1.8</option>
+                <option value="obj">60mm 2.8</option>
+                <option value="obj">24-60mm 2.8/4.5</option>
+            </select>
+            <div class="quantity">
+                <label for="quantité">Quantité :</label>
+
+                <input type="number" id="quantité" name="quantité" value=1 min="1" max="100">
+            </div>
+            <p><strong>Prix: 3099€</strong></p>
+            <form>
+                <input type="button" value="Ajouter au panier">
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <ul>
+            <li class=""><a href="#">Conditions générales de vente</a></li>
+        </ul>
+        <ul>
+            <li class=""><a href="#">À propos</a></li>
+        </ul>
+        <ul>
+            <li class=""><a href="mailto:orinoco@mail.fr">
+                    <i class="far fa-envelope"></i>
+                    Contact</a></li>
+        </ul>
+    </footer>
+    
+</body>
+
+</html>

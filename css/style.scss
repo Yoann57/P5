@@ -1,14 +1,13 @@
 @import "vars";
 
-
 body {
-    background: linear-gradient(90deg, rgba(196,137,19,1) 0%, rgba(128,20,210,1) 100%);
+    background: linear-gradient(90deg, rgba(196, 137, 19, 1) 0%, rgba(128, 20, 210, 1) 100%);
     margin: 0;
     font-family: "calibri";
 }
-.strong{
+
+.strong {
     font-family: "calibri-bold";
-   
 }
 
 #logo img {
@@ -23,18 +22,16 @@ body {
     background-color: $violet;
     padding-right: 25px;
     padding-left: 50px;
-    padding-right: 40px;
     font-size: large;
     height: 90px;
-
+    width:1444px;
 }
 
 .navliens {
     display: flex;
     list-style-type: none;
-    padding-top: 10px;
+    padding: 25px 10px 10px 10px;
     font-size: 20px;
-
 }
 
 .liens {
@@ -43,8 +40,10 @@ body {
     margin-left: 60px;
     color: white;
 }
-.liens:hover{
-    color:$orange;
+
+.liens:hover {
+    color: $orange;
+    cursor: pointer;
 }
 
 h1 {
@@ -55,12 +54,23 @@ h1 {
     width: fit-content;
     margin: auto;
     padding: 5px 15px 5px 15px;
-border-radius:0 0 30px 30px ;
+    border-radius: 0 0 30px 30px;
     background-color: $violet;
 }
-h2{
+
+h2 {
     text-align: center;
     font-family: "calibri-bold";
+}
+
+h3 {
+    font-family: "calibri-bold";
+    color: $violet;
+    text-align: center;
+    border-bottom: $border2r;
+    padding-bottom: 19px;
+    border-radius: 20px;
+    font-size: 20px;
 }
 
 #cameras,
@@ -68,56 +78,58 @@ h2{
     margin-top: 40px;
     justify-content: space-evenly;
     display: flex;
-
 }
 
 .carte {
-    border: 2px $rose solid;
+    border: $border2r;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
     background-color: $gris;
 }
-.voirprod{
+
+.voirprod {
     color: white;
     text-align: center;
     justify-content: center;
-    border:1px solid $rose;
-    box-shadow: 1px 2px 2px $violet;
+    box-shadow: $box-shadow-v;
     background-color: $rose;
     border-radius: 30px;
-    width:140px;
+    width: 140px;
     margin: auto;
-    height:40px;
+    height: 30px;
     font-size: 18px;
-    
+    padding-top: 7px;
 }
 
-.voirprod:hover{
+.voirprod:hover {
     background-color: $violet;
-    box-shadow:1px 2px 2px $rose;
+    box-shadow: $box-shadow-r;
 }
 
-
-.zurss50s,.pzurss50s {
-    background-image: url(images/vcam_1.jpg);
-
+.zurss50s,
+.pzurss50s {
+    background-image: url(../images/vcam_1.jpg);
 }
 
-.hirsch400dts,.phirsch400dts {
-    background-image: url(images/vcam_2.jpg);
+.hirsch400dts,
+.phirsch400dts {
+    background-image: url(../images/vcam_2.jpg);
 }
 
-.franckjs105,.pfranckjs105 {
-    background-image: url(images/vcam_3.jpg);
+.franckjs105,
+.pfranckjs105 {
+    background-image: url(../images/vcam_3.jpg);
 }
 
-.kurostts,.pkurostts {
-    background-image: url(images/vcam_4.jpg);
+.kurostts,
+.pkurostts {
+    background-image: url(../images/vcam_4.jpg);
 }
 
-.katatone,.pkatatone {
-    background-image: url(images/vcam_5.jpg);
+.katatone,
+.pkatatone {
+    background-image: url(../images/vcam_5.jpg);
 }
 
 .zurss50s,
@@ -138,16 +150,16 @@ h2{
     color: $noir;
     font-size: 18px;
 }
-.carte strong{
+
+.carte strong {
     font-size: 22px;
     font-family: "calibri-bold";
-    color:$violet;
+    color: $violet;
 }
 
 .carte a {
     text-decoration: none;
 }
-
 
 footer {
     display: flex;
@@ -162,14 +174,12 @@ footer ul {
     padding-top: 5px;
     padding-right: 50px;
     text-align: center;
-
 }
 
 footer a {
     color: $blanc;
     text-decoration: none;
     font-size: 20px;
-
 }
 
 footer :hover a {
@@ -177,28 +187,34 @@ footer :hover a {
     color: $orange;
 }
 
+/* Page details produit */
+
 #produit {
     display: flex;
     justify-content: center;
-
 }
 
 .cartedesc {
+    border: $border2r;
     margin-top: 100px;
     margin-bottom: 122px;
-    border: 2px $rose solid;
     background-color: $gris;
     border-radius: 10px;
     width: 500px;
     padding: 10px;
 }
-.cartedesc p strong{
-   display: block;
-   padding-top:50px;
+
+.cartedesc p strong {
+    display: block;
+    padding-top: 20px;
     font-size: 17px;
 }
 
-.pzurss50s,.phirsch400dts,.pfranckjs105,.pkurostts,.pkatatone {
+.pzurss50s,
+.phirsch400dts,
+.pfranckjs105,
+.pkurostts,
+.pkatatone {
     height: 330px;
     width: auto;
     background-size: cover;
@@ -210,6 +226,7 @@ button,
 input {
     border-radius: 5px;
     background-color: $rose;
+    box-shadow: $box-shadow-v;
     color: white;
     padding: 10px;
     border: none;
@@ -220,6 +237,7 @@ input {
 button,
 input:hover {
     background-color: $violet;
+    box-shadow: $box-shadow-r;
 }
 
 label {
@@ -229,47 +247,105 @@ label {
     color: $violet;
 }
 
+.quantity {
+    display: flex;
+    margin-top: 30px;
+}
+
+input#quantité {
+    background-color: $violet;
+    padding-left: 5px;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    border-left: 5px $violet solid;
+}
+
 select {
     margin-top: 15px;
     font-size: .9rem;
     padding: 2px 5px;
     color: $blanc;
-    background:$violet ;
+    background: $violet;
+    box-shadow: $box-shadow-r;
 }
-#erreur404{
+
+/* Page Erreur 404 */
+
+#erreur404 {
     text-align: center;
-    
 }
-.oups{
+
+.oups {
     font-size: 80px;
-    color:$blanc;
+    color: $blanc;
 }
-.pagenotfound{
+
+.pagenotfound {
     font-size: 40px;
     margin-bottom: 40px;
-    color:$blanc;
+    color: $blanc;
 }
-.fleche{
+
+.fleche {
     font-size: 80px;
-    color:$blanc;
+    color: $blanc;
 }
-.btnretour{
-    border:1px $rose solid;
-    box-shadow: 1px 2px 2px $rose;
+
+.btnretour {
+    box-shadow: $box-shadow-r;
     padding: 25px;
     font-size: 25px;
     border-radius: 50px;
 }
-.btnretour:hover{
-   background-color:$rose;
-   box-shadow: 1px 2px 2px $violet;
+
+.btnretour:hover {
+    background-color: $rose;
+    box-shadow: $box-shadow-v;
+}
+
+.txtredirige {
+    text-align: center;
+    color: $blanc;
+    margin-top: 45px;
+    font-size: 20px;
+}
+
+#counter {
+    text-align: center;
+    color: $blanc;
+    font-size: 20px;
+}
+
+/* Page Panier */
+
+#panier {
+    display: flex;
+}
+
+.paniergauche {
+    border: $border2r;
+    background-color: $gris;
+    width: 62%;
+    height: 600px;
+    border-radius: 20px;
+    margin: 20px 0 20px 20px;
+}
+
+.panierdroite {
+    border: $border2r;
+    background-color: $gris;
+    border-radius: 20px;
+    margin: 20px 20px 20px 0;
+    width: 35%;
+    height: 600px;
 }
 
 @media screen and (max-width: 1024px) {
     .navbar {
         padding-left: 20px;
-            margin: 0;
-            padding: 0;
+        margin: 0;
+        padding: 0;
     }
 
     #cameras,
@@ -281,16 +357,12 @@ select {
     }
 }
 
-
 @media screen and (max-width: 767px) {
-
-    h1{
+    h1 {
         margin-bottom: 10px;
     }
+
     .navliens {
-        justify-content: flex-end;
-        flex-wrap: wrap;
-        flex-direction: row;
         padding: 5px;
         margin: 0;
     }
@@ -298,14 +370,16 @@ select {
     .liens {
         margin: 5px;
     }
-    #produit{
+
+    #produit {
         flex-direction: row;
         flex-wrap: wrap;
+    }
 
+    .cartedesc {
+        margin: 0;
     }
-    .cartedesc{
-        margin:0;
-    }
+
     #cameras,
     #cameras2 {
         flex-direction: row;
@@ -321,13 +395,22 @@ select {
     }
 
     footer ul {
-        padding-right: 10px;
+
+        padding: 10px;
         text-align: left;
+        margin: 0;
+    }
+
+    footer li {
+        text-align: center;
     }
 
 }
-@media screen and (max-width: 350px){
-    .navliens{
+
+@media screen and (max-width: 550px) {
+    .navliens {
+        flex-wrap: nowrap;
+        flex-direction: column;
         font-size: 15px;
-}
+    }
 }
