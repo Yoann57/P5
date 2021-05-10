@@ -1,12 +1,12 @@
 @charset "UTF-8";
 @font-face {
   font-family: "calibri";
-  src: url("polices/calibri.ttf");
+  src: url("../polices/calibri.ttf");
 }
 
 @font-face {
   font-family: "calibri-bold";
-  src: url("polices/calibri-bold.ttf");
+  src: url("../polices/calibri-bold.ttf");
 }
 
 body {
@@ -38,7 +38,6 @@ body {
   padding-left: 50px;
   font-size: large;
   height: 90px;
-  width: 1444px;
 }
 
 .navliens {
