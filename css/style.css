@@ -89,8 +89,7 @@ h3 {
   font-size: 20px;
 }
 
-#cameras,
-#cameras2 {
+#cameras {
   margin-top: 40px;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -98,9 +97,18 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .carte {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border: 2px #a249aa solid;
   border-radius: 10px;
   padding: 10px;
@@ -120,6 +128,7 @@ h3 {
   border-radius: 30px;
   width: 140px;
   margin: auto;
+  margin-top: 10px;
   height: 30px;
   font-size: 18px;
   padding-top: 7px;
@@ -131,7 +140,6 @@ h3 {
           box-shadow: 1px 2px 2px #a249aa;
 }
 
-.zurss50s,
 .pzurss50s {
   background-image: url(../images/vcam_1.jpg);
 }
@@ -156,26 +164,24 @@ h3 {
   background-image: url(../images/vcam_5.jpg);
 }
 
-.zurss50s,
-.hirsch400dts,
-.franckjs105,
-.kurostts,
-.katatone {
+.image {
   height: 250px;
-  width: 300px;
+  width: 350px;
+  margin-bottom: 10px;
   background-size: cover;
   background-position: center;
   border-radius: 5px;
 }
 
-.carte p {
+.carte-p {
   margin-top: 10px;
   text-align: center;
   color: #000000;
   font-size: 18px;
 }
 
-.carte strong {
+.carte-strong {
+  text-align: center;
   font-size: 22px;
   font-family: "calibri-bold";
   color: #8014d2;
@@ -230,25 +236,23 @@ footer :hover a {
   background-color: #CAC7C7;
   border-radius: 10px;
   width: 500px;
-  padding: 10px;
+  padding: 6px 10px 6px 10px;
 }
 
-.cartedesc p strong {
+#prix {
   display: block;
   padding-top: 20px;
   font-size: 17px;
+  font-family: "calibri-bold";
 }
 
-.pzurss50s,
-.phirsch400dts,
-.pfranckjs105,
-.pkurostts,
-.pkatatone {
+.imageproduit {
   height: 330px;
   width: auto;
   background-size: cover;
   background-position: center;
   border-radius: 5px;
+  margin: 4px 0 0 1px;
 }
 
 button,
