@@ -248,7 +248,7 @@ footer :hover a {
 
 .imageproduit {
   height: 330px;
-  width: auto;
+  width: 496px;
   background-size: cover;
   background-position: center;
   border-radius: 5px;
@@ -256,7 +256,7 @@ footer :hover a {
 }
 
 button,
-input {
+input, #boutoncommander {
   border-radius: 5px;
   background-color: #a249aa;
   -webkit-box-shadow: 1px 2px 2px #8014d2;
@@ -268,8 +268,8 @@ input {
   margin: auto;
 }
 
-button,
-input:hover {
+button:hover,
+input:hover, #boutoncommander:hover {
   background-color: #8014d2;
   -webkit-box-shadow: 1px 2px 2px #a249aa;
           box-shadow: 1px 2px 2px #a249aa;
@@ -337,7 +337,7 @@ select {
   border-radius: 50px;
 }
 
-.btnretour:hover {
+.btnretour {
   background-color: #a249aa;
   -webkit-box-shadow: 1px 2px 2px #8014d2;
           box-shadow: 1px 2px 2px #8014d2;
@@ -363,22 +363,106 @@ select {
   display: flex;
 }
 
-.paniergauche {
+#paniergauche {
   border: 2px #a249aa solid;
   background-color: #CAC7C7;
   width: 62%;
-  height: 600px;
+  min-height: 532px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 20px;
   margin: 20px 0 20px 20px;
 }
 
-.panierdroite {
+#lignecommande {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px;
+}
+
+#nomarticle, #prixarticle, #quantite, #option {
+  width: 20%;
+}
+
+#paniervide {
+  color: #a249aa;
+  font-size: x-large;
+  text-align: center;
+  font-family: "calibri-bold";
+}
+
+#panierdroite {
   border: 2px #a249aa solid;
   background-color: #CAC7C7;
   border-radius: 20px;
   margin: 20px 20px 20px 0;
   width: 35%;
-  height: 600px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+#prixtotal {
+  margin: 40px;
+  font-size: 20px;
+  text-align: center;
+}
+
+/*Formulaire*/
+form {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+form div + div {
+  margin-top: 1em;
+}
+
+label {
+  margin-left: 10px;
+  width: 95px;
+}
+
+#formflex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 15px;
+}
+
+#boutoncommander {
+  margin-top: 25px;
+  padding: 20px;
+  font-size: 17px;
+}
+
+#nom, #prenom, #ville, #adresse, #mail {
+  width: 80%;
+  margin-left: -20px;
+  margin-right: 10px;
+}
+
+/* Voici notre composition pour les champs invalides */
+.error {
+  width: 100%;
+  padding: 0;
+  font-size: 80%;
+  color: white;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.error.active {
+  padding: 0.3em;
 }
 
 @media screen and (max-width: 1024px) {
@@ -454,6 +538,31 @@ select {
   footer li {
     text-align: center;
   }
+  #panier {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #paniergauche {
+    min-height: 170px;
+  }
+  #paniergauche, #panierdroite {
+    width: 100%;
+    margin: auto;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #btnsuppr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -465,6 +574,29 @@ select {
         -ms-flex-direction: column;
             flex-direction: column;
     font-size: 15px;
+  }
+  #lignecommande {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-right: 80px;
+    margin-left: 80px;
+  }
+  #nomarticle, #prixarticle, #quantite, #option {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  h4 {
+    margin-top: 1px;
   }
 }
 /*# sourceMappingURL=style.css.map */

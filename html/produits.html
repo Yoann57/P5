@@ -49,8 +49,8 @@
 
             <select name="objectif" id="objectif-select">
 
-                <option value="obj">35mm 1.4</option>
-                <option value="obj">50mm 1.6</option>
+                <option >35mm 1.4</option>
+                <option >50mm 1.6</option>
             </select>
             <div class="quantity">
                 <label for="quantité">Quantité :</label>
@@ -59,7 +59,7 @@
             </div>
             <p id="prix"><strong>Prix: 499€</strong></p>
             <form>
-                <input type="button" id="button" value="Ajouter au panier" onclick="ajouterpanier()">
+                <input type="button" id="button" value="Ajouter au panier">
             </form>
         </div>
     </div>
@@ -78,6 +78,7 @@
         </ul>
     </footer>
     <script type="text/javascript" src="../js/fonctions.js"></script>
+    <script>getCamerasById();</script>
 
 </body>
 

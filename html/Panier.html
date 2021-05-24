@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://kit.fontawesome.com/fb0255ef6d.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../js/fonctions.js"></script>
 
     <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
     <link rel="stylesheet" href="../css/style.css" />
@@ -38,15 +37,46 @@
     </header>
 
     <div id="panier">
-        <div class="paniergauche">
+        <div id="paniergauche">
             <h3>MON PANIER</h3>
-
+               <div id="paniervide"></div>
+            <div id= "lignecommande">
+            <div id = "nomarticle"></div>
+            <div id = "quantite"></div>
+            <div id = "prixarticle"></div>
         </div>
-        <div class="panierdroite">
+        
+    </div>
+        <div id="panierdroite">
             <h3>TOTAL</h3>
-
+            <div id = "prixtotal">prix total</div>
+            <form action="/ma-page-de-traitement" method="post">
+                <div id="formflex">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="user_nom">
+                </div>
+                <div id="formflex">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="user_prenom">
+                </div>
+                <div id="formflex">
+                    <label for="adresse">Adresse :</label>
+                    <input type="text" id="adresse" name="user_adresse">
+                </div>
+                <div id="formflex">
+                    <label for="ville">Ville :</label>
+                    <input type="text" id="ville" name="user_ville">
+                </div>
+                <div id="formflex">
+                    <label for="mail">E-mail :</label>
+                    <input type="email" id="mail" name="user_mail">
+                </div>
+                <div id="btncomdiv">
+                    <button id="boutoncommander" type="submit">Commander</button>
+                  </div>
+            </form>
         </div>
-
+        
 
     </div>
 
@@ -63,7 +93,10 @@
                     Contact</a></li>
         </ul>
     </footer>
-    
+    <script type="text/javascript" src="../js/fonctions.js"></script>
+    <script>panierGauche ();</script>
+    <script>calculPrix ();</script>
+   
 </body>
 
 </html>

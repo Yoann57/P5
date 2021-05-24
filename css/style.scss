@@ -213,7 +213,7 @@ footer :hover a {
 
 .imageproduit{
     height: 330px;
-    width: auto;
+    width: 496px;
     background-size: cover;
     background-position: center;
     border-radius: 5px;
@@ -221,7 +221,7 @@ footer :hover a {
 }
 
 button,
-input {
+input,#boutoncommander {
     border-radius: 5px;
     background-color: $rose;
     box-shadow: $box-shadow-v;
@@ -232,8 +232,8 @@ input {
     margin: auto;
 }
 
-button,
-input:hover {
+button:hover,
+input:hover,#boutoncommander:hover {
     background-color: $violet;
     box-shadow: $box-shadow-r;
 }
@@ -297,7 +297,7 @@ select {
     border-radius: 50px;
 }
 
-.btnretour:hover {
+.btnretour {
     background-color: $rose;
     box-shadow: $box-shadow-v;
 }
@@ -321,23 +321,96 @@ select {
     display: flex;
 }
 
-.paniergauche {
+#paniergauche {
     border: $border2r;
     background-color: $gris;
     width: 62%;
-    height: 600px;
+    min-height: 532px;
+    height:fit-content;
     border-radius: 20px;
     margin: 20px 0 20px 20px;
 }
+#lignecommande{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin:10px;
+}
+#nomarticle,#prixarticle,#quantite,#option{
+    width:20%;
+}
+#paniervide{
+    color:$rose;
+    font-size: x-large;
+    text-align: center;
+   font-family: "calibri-bold";
+}
 
-.panierdroite {
+#panierdroite {
     border: $border2r;
     background-color: $gris;
     border-radius: 20px;
     margin: 20px 20px 20px 0;
     width: 35%;
-    height: 600px;
+    height:fit-content;
 }
+#prixtotal{
+    margin: 40px;
+    font-size: 20px;
+    text-align: center;
+}
+/*Formulaire*/
+form {
+    margin: 0 auto;
+    padding:10px;
+    
+  }
+  form div + div {
+    margin-top: 1em;
+  }
+  label {
+      margin-left: 10px;
+    width: 95px; 
+  }
+  #formflex{
+      display:flex;
+      margin-top: 15px;
+    
+  }
+  #boutoncommander{
+      margin-top: 25px;
+   padding:20px;
+   font-size: 17px ;
+  }
+  #nom,#prenom,#ville,#adresse,#mail{
+width:80%;
+margin-left: -20px;
+margin-right: 10px;
+
+  }
+  
+  
+  /* Voici notre composition pour les champs invalides */
+ 
+.error {
+    width  : 100%;
+    padding: 0;
+  
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+  
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .error.active {
+    padding: 0.3em;
+  }
+
+  
+  
 
 @media screen and (max-width: 1024px) {
     .navbar {
@@ -402,8 +475,28 @@ select {
     footer li {
         text-align: center;
     }
-
+    #panier{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #paniergauche{
+        min-height: 170px;  
+    }
+    #paniergauche,#panierdroite{
+        width: 100%;
+        margin:auto;
+        height: fit-content;
+        
+    }
+    #btnsuppr{
+        margin-top: 10px;
+        margin-bottom: 15px;
+        width:100%;
+    }
 }
+
+
 
 @media screen and (max-width: 550px) {
     .navliens {
@@ -411,4 +504,22 @@ select {
         flex-direction: column;
         font-size: 15px;
     }
+#lignecommande{
+    display:flex;
+    flex-direction: column;
+    margin-right: 80px;
+    margin-left:80px;
+}
+#nomarticle,#prixarticle,#quantite,#option {
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+   
+  
+}
+h4{
+    margin-top: 1px;
+   
+}
+
 }
