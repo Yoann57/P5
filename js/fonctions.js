@@ -76,7 +76,6 @@ const getCamerasById = () => {
         if (!reponse.ok) {
             window.location.replace("Page_erreur404.html");
         }
-
         return reponse.json()
 
     }).then((dataCamera) => {
@@ -132,10 +131,9 @@ const getCamerasById = () => {
 
             //***** LOCAL STORAGE *****//
 
-            //Si il y a deja des produits enregistré dans le local storage
+            //S'il n'y a pas de produits enregistré dans le local storage,crée un tableau
             if (!produitLocalStorage) {
                 produitLocalStorage = [];
-
             }
             produitLocalStorage.push(optionsProduit);
             localStorage.setItem("produit", JSON.stringify(produitLocalStorage));
@@ -193,22 +191,114 @@ supprimerProduit = (i) => {
 };
 //***** FORMULAIRE *****//
 
-//verification des données avant envoi
-const veriform = () => {
-    // récupère le formulaire et le champ d'e-mail 
-    var form = document.getElementsByTagName('form')[0];
-    var email = document.getElementById('mail');
+const validForm = () => {
+    //selection du bouton d'envoi du formulaire
+    const btnForm = document.getElementById("btncomdiv");
 
-    email.addEventListener("input", function (event) {
-        // vérifie la validité du champ e-mail.
-        if (email.validity.valid) {}
-    }, false);
-    form.addEventListener("submit", function (event) {
-        // Chaque fois que l'utilisateur tente d'envoyer les données
-        // vérifie que le champ email est valide.
-        if (!email.validity.valid) {
-            //  empêche l'envoi des données du formulaire
-            event.preventDefault();
+    btnForm.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        //vérifie les inputs du formulaire
+
+        //Controle Regex
+        let regexNombre = /[0-9]/;
+        let regexMail = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        let regexSpecial = /[§!@#$%^&*(),.?":{}|<>]/;
+
+        //Récupération des entrées
+        let formNom = document.getElementById("nom").value;
+        let formPrenom = document.getElementById("prenom").value;
+        let formMail = document.getElementById("mail").value;
+        let formAdresse = document.getElementById("adresse").value;
+        let formVille = document.getElementById("ville").value;
+
+        //message erreur
+        let messagErreur = "";
+
+        //Test du nom 
+        if (regexNombre.test(formNom) == true || regexSpecial.test(formNom) == true || formNom == "") {
+            messagErreur = "Nom incorrect";
+        } else {
+            console.log("Nom ok");
+        };
+        //Test du prénom 
+        if (regexNombre.test(formPrenom) == true || regexSpecial.test(formPrenom) == true || formPrenom == "") {
+            messagErreur = "Prénom incorrect";
+        } else {
+            console.log("Prénom ok");
+        };
+        //Test de l'adresse mail
+        if (regexMail.test(formMail) == false) {
+            messagErreur = "Email incorrect";
+        } else {
+            console.log("Adresse mail ok");
+        };
+        //Test de l'adresse 
+        if (regexSpecial.test(formAdresse) == true || formAdresse == "") {
+            messagErreur = "Adresse incorrect";
+        } else {
+            console.log("Adresse ok");
+        };
+        //Test de la ville 
+        if (regexSpecial.test(formVille) == true && regexNombre.test(formVille) == true || formVille == "") {
+            messagErreur = "Ville incorrect"
+        } else {
+            console.log("Ville ok")
+        };
+        //Si une entrée est incorect, message d'alert avec la raison
+        if (messagErreur != "") {
+            alert("Verifier : " + messagErreur);
         }
-    }, false);
+        //Si tout est ok création de l'objet contact
+        else {
+            contact = {
+                nom: formNom,
+                prenom: formPrenom,
+                addresse: formAdresse,
+                ville: formVille,
+                email: formMail
+            };
+            const aEnvoyer = {
+                produitLocalStorage,
+                contact,
+            };
+            envoiServeur(aEnvoyer);
+            return contact;
+        };
+        function envoiServeur(aEnvoyer) {
+            //Envoi du formulaire
+            const promise = fetch("http://localhost:3000/api/order", {
+                method: "POST",
+                body: JSON.stringify(aEnvoyer),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+            //Resultat serveur dans la console
+            promise.then(async (response) => {
+                //si la promesse est rejeté
+                try {
+                    const contenu = await response.json();
+                    console.log("contenu de response");
+                    console.log(contenu);
+
+                    if (Response.ok) {
+                        console.log("resultat de response.ok");
+                        //recuperation de l'id de la reponse du serveur
+                        console.log("id de response");
+                        console.log(contenu._id);
+                        //mettre l'id dans le local storage
+                        localStorage.setItem("responseId", contenu._id);
+                        //aller vers la page de confimation de commande
+                        window.location = "/html/confirmation-commande.html";
+                    } else {
+                        alert("probleme avec le serveur")
+                    };
+                } catch (e) {
+                    console.log("erreur qui vient du catch");
+                    console.log(e);
+                }
+            });
+        }
+    })
 }
