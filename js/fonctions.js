@@ -265,40 +265,41 @@ const validForm = () => {
             envoiServeur(aEnvoyer);
             return contact;
         };
-        function envoiServeur(aEnvoyer) {
-            //Envoi du formulaire
-            const promise = fetch("http://localhost:3000/api/order", {
-                method: "POST",
-                body: JSON.stringify(aEnvoyer),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
-            //Resultat serveur dans la console
-            promise.then(async (response) => {
-                //si la promesse est rejeté
-                try {
-                    const contenu = await response.json();
-                    console.log("contenu de response");
-                    console.log(contenu);
-
-                    if (Response.ok) {
-                        console.log("resultat de response.ok");
-                        //recuperation de l'id de la reponse du serveur
-                        console.log("id de response");
-                        console.log(contenu._id);
-                        //mettre l'id dans le local storage
-                        localStorage.setItem("responseId", contenu._id);
-                        //aller vers la page de confimation de commande
-                        window.location = "/html/confirmation-commande.html";
-                    } else {
-                        alert("probleme avec le serveur")
-                    };
-                } catch (e) {
-                    console.log("erreur qui vient du catch");
-                    console.log(e);
-                }
-            });
-        }
+        
     })
+}
+function envoiServeur(aEnvoyer) {
+    //Envoi du formulaire
+    const promise = fetch("http://localhost:3000/api/cameras/order", {
+        method: "POST",
+        body: JSON.stringify(aEnvoyer),
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+    //Resultat serveur dans la console
+    promise.then(async (response) => {
+        //si la promesse est rejeté
+        try {
+            const contenu = await response.json();
+            console.log("contenu de response");
+            console.log(contenu);
+
+            if (Response.ok) {
+                console.log("resultat de response.ok");
+                //recuperation de l'id de la reponse du serveur
+                console.log("id de response");
+                console.log(contenu._id);
+                //mettre l'id dans le local storage
+                localStorage.setItem("responseId", contenu._id);
+                //aller vers la page de confimation de commande
+                window.location = "/html/confirmation-commande.html";
+            } else {
+                alert("probleme avec le serveur")
+            };
+        } catch (e) {
+            console.log("erreur qui vient du catch");
+            console.log(e);
+        }
+    });
 }

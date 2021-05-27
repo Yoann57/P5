@@ -89,6 +89,13 @@ h3 {
   font-size: 20px;
 }
 
+h5 {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 70px;
+}
+
 #cameras {
   margin-top: 40px;
   -webkit-box-pack: space-evenly;
