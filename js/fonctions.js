@@ -252,30 +252,35 @@ const validForm = () => {
         //Si tout est ok création de l'objet contact
         else {
             contact = {
-                nom: formNom,
-                prenom: formPrenom,
-                addresse: formAdresse,
-                ville: formVille,
+                firstName: formNom,
+                lastName: formPrenom,
+                address: formAdresse,
+                city: formVille,
                 email: formMail
             };
+            products = {
+                produitLocalStorage
+            };
             const aEnvoyer = {
-                produitLocalStorage,
-                contact,
+                products,
+                contact
             };
             envoiServeur(aEnvoyer);
             return contact;
         };
-        
+
     })
 }
+
 function envoiServeur(aEnvoyer) {
     //Envoi du formulaire
-    const promise = fetch("http://localhost:3000/api/cameras/order", {
-        method: "POST",
-        body: JSON.stringify(aEnvoyer),
+    const promise = fetch('http://localhost:3000/api/cameras/order/', {
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json",
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
         },
+        body: JSON.stringify(aEnvoyer),
     });
     //Resultat serveur dans la console
     promise.then(async (response) => {
