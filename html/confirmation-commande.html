@@ -14,7 +14,25 @@
     <title>Orinoco</title>
 </head>
 
+
 <body>
-<h5>Votre commande est bien validée</h5>
+    <div id="container-recapitulatif-commande">
+        <h5>Votre commande est bien validée</h5>
+        <div class="recapCommande">
+        <p>Votre commande numéro :
+            <div id="idcommande"> <strong>${responseId}</strong></div>
+                 a bien été prise en compte</p>
+        <p>Merci et à bientot</p>
+        </div>
+
+        
+</div>
+<a id="retouracceuil" href="../index.html">
+    <i class="fas fa-home"></i>
+   Retour à l'acceuil</a>
+
+
+   <script type="text/javascript" src="../js/fonctions.js"></script>
+   <script>validCommande()</script>
 </body>
 </html>

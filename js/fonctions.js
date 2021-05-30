@@ -102,7 +102,7 @@ const getCamerasById = () => {
         // Récuperation du prix
         let balisePrix = document.getElementById("prix");
         balisePrix.innerHTML = dataCamera.price;
-        balisePrix.textContent = dataCamera.price / 100 + " €";
+        balisePrix.textContent = "Prix : "+ dataCamera.price / 100 + " €";
 
         //***** GESTION DU PANIER *****//
 
@@ -214,7 +214,7 @@ const validForm = () => {
 
         //message erreur
         let messagErreur = "";
-
+        
         //Test du nom 
         if (regexNombre.test(formNom) == true || regexSpecial.test(formNom) == true || formNom == "") {
             messagErreur = "Nom incorrect";
@@ -240,7 +240,7 @@ const validForm = () => {
             console.log("Adresse ok");
         };
         //Test de la ville 
-        if (regexSpecial.test(formVille) == true && regexNombre.test(formVille) == true || formVille == "") {
+        if (regexNombre.test(formVille) == true || regexSpecial.test(formVille) == true || formVille == "") {
             messagErreur = "Ville incorrect"
         } else {
             console.log("Ville ok")
@@ -249,6 +249,12 @@ const validForm = () => {
         if (messagErreur != "") {
             alert("Verifier : " + messagErreur);
         }
+        //verifie si le panier contient au moins un produit
+        let valeurPanier = JSON.parse(localStorage.getItem("produit"));
+        if(valeurPanier.length < 1 ){
+            console.log("le localStorage ne contient pas de panier")
+            alert("Votre panier est vide");
+        } 
         //Si tout est ok création de l'objet contact
         else {
             contact = {
@@ -258,23 +264,19 @@ const validForm = () => {
                 city: formVille,
                 email: formMail
             };
-            products = {
-                produitLocalStorage
-            };
-            const aEnvoyer = {
-                products,
-                contact
+            const products = produitLocalStorage.map((produit) => produit.idproduit);
+            const aEnvoyer = {  
+                contact,
+                products: products 
             };
             envoiServeur(aEnvoyer);
             return contact;
         };
-
     })
 }
-
 function envoiServeur(aEnvoyer) {
     //Envoi du formulaire
-    const promise = fetch('http://localhost:3000/api/cameras/order/', {
+    const promise = fetch('http://localhost:3000/api/cameras/order', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -290,15 +292,16 @@ function envoiServeur(aEnvoyer) {
             console.log("contenu de response");
             console.log(contenu);
 
-            if (Response.ok) {
+            if (response.ok) {
                 console.log("resultat de response.ok");
                 //recuperation de l'id de la reponse du serveur
                 console.log("id de response");
-                console.log(contenu._id);
+                console.log(contenu.orderId);
                 //mettre l'id dans le local storage
-                localStorage.setItem("responseId", contenu._id);
+                localStorage.setItem("responseId", contenu.orderId);
                 //aller vers la page de confimation de commande
-                window.location = "/html/confirmation-commande.html";
+                window.location = "confirmation-commande.html";
+                
             } else {
                 alert("probleme avec le serveur")
             };
@@ -307,4 +310,19 @@ function envoiServeur(aEnvoyer) {
             console.log(e);
         }
     });
+}
+const validCommande = () => {
+// recuperation de l'id de la commande dans le local storage
+const responseId = localStorage.getItem("responseId");
+console.log(`responseId : ${responseId}`);
+
+//injection de l'id commande dans le html
+document.getElementById("idcommande").innerHTML = responseId;
+
+//effacer local storage 
+function enleverCleLocalStorage(key){
+    localStorage.removeItem(key);
+};
+enleverCleLocalStorage("responseId");
+enleverCleLocalStorage("produit");
 }

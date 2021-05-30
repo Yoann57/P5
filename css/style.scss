@@ -33,8 +33,7 @@ body {
     font-size: 20px;
 }
 
-.liens {
-
+.liens,#retouracceuil {
     text-decoration: none;
     margin-left: 60px;
     color: white;
@@ -74,8 +73,9 @@ h3 {
 h5{
     color:white;
     text-align: center;
-    font-size: 18px;
-    margin-top: 70px;
+    font-size: 24px;
+    margin-top: 80px;
+    margin-bottom: 50px;
 }
 
 #cameras {
@@ -115,34 +115,10 @@ h5{
     box-shadow: $box-shadow-r;
 }
 
-
-.pzurss50s {
-    background-image: url(../images/vcam_1.jpg);
-}
-
-.hirsch400dts,
-.phirsch400dts {
-    background-image: url(../images/vcam_2.jpg);
-}
-
-.franckjs105,
-.pfranckjs105 {
-    background-image: url(../images/vcam_3.jpg);
-}
-
-.kurostts,
-.pkurostts {
-    background-image: url(../images/vcam_4.jpg);
-}
-
-.katatone,
-.pkatatone {
-    background-image: url(../images/vcam_5.jpg);
-}
-
 .image {
-    height: 250px;
-    width: 350px;
+    height: auto;
+    max-width: 100%;
+    width:350px;
     margin-bottom: 10px;
     background-size: cover;
     background-position: center;
@@ -203,23 +179,25 @@ footer :hover a {
 .cartedesc {
     border: $border2r;
     margin-top: 100px;
-    margin-bottom: 122px;
+    margin-bottom: 119px;
     background-color: $gris;
     border-radius: 10px;
     width: 500px;
+    height:340px;
     padding: 6px 10px 6px 10px;
 }
 
 #prix {
     display: block;
-    padding-top: 20px;
-    font-size: 17px;
+    padding-top: 10px;
+    margin-left: 10px;
+    font-size: 18px;
     font-family: "calibri-bold" ;
 }
 
 .imageproduit{
-    height: 330px;
-    width: 496px;
+    height: auto;
+   max-width: 100%;
     background-size: cover;
     background-position: center;
     border-radius: 5px;
@@ -392,28 +370,45 @@ form {
 width:80%;
 margin-left: -20px;
 margin-right: 10px;
-
   }
   
-  
-  /* Voici notre composition pour les champs invalides */
- 
-.error {
-    width  : 100%;
-    padding: 0;
-  
-    font-size: 80%;
+//Page confirmation commande
+#container-recapitulatif-commande{
+    margin:auto;
+    text-align: center;
     color: white;
-    background-color: #900;
-    border-radius: 0 0 5px 5px;
-  
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  
-  .error.active {
-    padding: 0.3em;
-  }
+    font-size: 18px;
+}
+#retouracceuil{
+    display:flex;
+    justify-content: center;
+    box-shadow: $box-shadow-r;
+    background-color: $violet;
+    padding:15px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 18px; 
+    border-radius: 30px;
+}
+#retouracceuil i{
+    margin-right: 10px;
+}
+
+#retouracceuil:hover {
+    background-color: $rose;
+    box-shadow: $box-shadow-v;
+}
+#idcommande{
+    margin:auto;
+    margin-bottom: 18px;
+    border:3px $violet solid;
+    border-radius: 5px;
+    width:fit-content;
+    padding:5px;
+
+
+}
 
   
   
@@ -424,7 +419,15 @@ margin-right: 10px;
         margin: 0;
         padding: 0;
     }
-
+    #produit {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+    .cartedesc {
+        margin: 0;
+        height:auto;
+    }
     #cameras,
     #cameras2 {
         flex-direction: row;
@@ -434,7 +437,7 @@ margin-right: 10px;
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 770px) {
     h1 {
         margin-bottom: 10px;
     }
@@ -447,16 +450,6 @@ margin-right: 10px;
     .liens {
         margin: 5px;
     }
-
-    #produit {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .cartedesc {
-        margin: 0;
-    }
-
     #cameras,
     #cameras2 {
         flex-direction: row;
@@ -508,7 +501,6 @@ margin-right: 10px;
     .navliens {
         flex-wrap: nowrap;
         flex-direction: column;
-        font-size: 15px;
     }
 #lignecommande{
     display:flex;
