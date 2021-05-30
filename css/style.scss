@@ -33,7 +33,8 @@ body {
     font-size: 20px;
 }
 
-.liens,#retouracceuil {
+.liens,
+#retouracceuil {
     text-decoration: none;
     margin-left: 60px;
     color: white;
@@ -70,8 +71,9 @@ h3 {
     border-radius: 20px;
     font-size: 20px;
 }
-h5{
-    color:white;
+
+h5 {
+    color: white;
     text-align: center;
     font-size: 24px;
     margin-top: 80px;
@@ -118,7 +120,7 @@ h5{
 .image {
     height: auto;
     max-width: 100%;
-    width:350px;
+    width: 350px;
     margin-bottom: 10px;
     background-size: cover;
     background-position: center;
@@ -169,7 +171,7 @@ footer :hover a {
     color: $orange;
 }
 
-/* Page details produit */
+/****** PAGE DETAILS PRODUIT ******/
 
 #produit {
     display: flex;
@@ -183,7 +185,7 @@ footer :hover a {
     background-color: $gris;
     border-radius: 10px;
     width: 500px;
-    height:340px;
+    height: 340px;
     padding: 6px 10px 6px 10px;
 }
 
@@ -192,20 +194,21 @@ footer :hover a {
     padding-top: 10px;
     margin-left: 10px;
     font-size: 18px;
-    font-family: "calibri-bold" ;
+    font-family: "calibri-bold";
 }
 
-.imageproduit{
+.imageproduit {
     height: auto;
-   max-width: 100%;
+    max-width: 100%;
     background-size: cover;
     background-position: center;
     border-radius: 5px;
-    margin:4px 0 0 1px;
+    margin: 4px 0 0 1px;
 }
 
 button,
-input,#boutoncommander {
+input,
+#boutoncommander {
     border-radius: 5px;
     background-color: $rose;
     box-shadow: $box-shadow-v;
@@ -217,7 +220,8 @@ input,#boutoncommander {
 }
 
 button:hover,
-input:hover,#boutoncommander:hover {
+input:hover,
+#boutoncommander:hover {
     background-color: $violet;
     box-shadow: $box-shadow-r;
 }
@@ -252,7 +256,136 @@ select {
     box-shadow: $box-shadow-r;
 }
 
-/* Page Erreur 404 */
+/****** PAGE PANIER ******/
+
+#panier {
+    display: flex;
+}
+
+#paniergauche {
+    border: $border2r;
+    background-color: $gris;
+    width: 62%;
+    min-height: 532px;
+    height: fit-content;
+    border-radius: 20px;
+    margin: 20px 0 20px 20px;
+}
+
+#lignecommande {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+#nomarticle,
+#prixarticle,
+#quantite,
+#option {
+    width: 20%;
+}
+
+#paniervide {
+    color: $rose;
+    font-size: x-large;
+    text-align: center;
+    font-family: "calibri-bold";
+}
+
+#panierdroite {
+    border: $border2r;
+    background-color: $gris;
+    border-radius: 20px;
+    margin: 20px 20px 20px 0;
+    width: 35%;
+    height: fit-content;
+}
+
+#prixtotal {
+    margin: 40px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/****** FORMULAIRE ******/
+
+form {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+form div+div {
+    margin-top: 1em;
+}
+
+label {
+    margin-left: 10px;
+    width: 95px;
+}
+
+#formflex {
+    display: flex;
+    margin-top: 15px;
+}
+
+#boutoncommander {
+    margin-top: 25px;
+    padding: 20px;
+    font-size: 17px;
+}
+
+#nom,
+#prenom,
+#ville,
+#adresse,
+#mail {
+    width: 80%;
+    margin-left: -20px;
+    margin-right: 10px;
+}
+
+/**** PAGE CONFIRMATION COMMANDE ****/
+
+#container-recapitulatif-commande {
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+
+#retouracceuil {
+    display: flex;
+    justify-content: center;
+    box-shadow: $box-shadow-r;
+    background-color: $violet;
+    padding: 15px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 18px;
+    border-radius: 30px;
+}
+
+#retouracceuil i {
+    margin-right: 10px;
+}
+
+#retouracceuil:hover {
+    background-color: $rose;
+    box-shadow: $box-shadow-v;
+}
+
+#idcommande {
+    margin: auto;
+    margin-bottom: 18px;
+    border: 3px $violet solid;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 5px;
+}
+
+/****** PAGE ERREUR 404 ******/
 
 #erreur404 {
     text-align: center;
@@ -299,135 +432,24 @@ select {
     font-size: 20px;
 }
 
-/* Page Panier */
-
-#panier {
-    display: flex;
-}
-
-#paniergauche {
-    border: $border2r;
-    background-color: $gris;
-    width: 62%;
-    min-height: 532px;
-    height:fit-content;
-    border-radius: 20px;
-    margin: 20px 0 20px 20px;
-}
-#lignecommande{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin:10px;
-}
-#nomarticle,#prixarticle,#quantite,#option{
-    width:20%;
-}
-#paniervide{
-    color:$rose;
-    font-size: x-large;
-    text-align: center;
-   font-family: "calibri-bold";
-}
-
-#panierdroite {
-    border: $border2r;
-    background-color: $gris;
-    border-radius: 20px;
-    margin: 20px 20px 20px 0;
-    width: 35%;
-    height:fit-content;
-}
-#prixtotal{
-    margin: 40px;
-    font-size: 20px;
-    text-align: center;
-}
-/*Formulaire*/
-form {
-    margin: 0 auto;
-    padding:10px;
-    
-  }
-  form div + div {
-    margin-top: 1em;
-  }
-  label {
-      margin-left: 10px;
-    width: 95px; 
-  }
-  #formflex{
-      display:flex;
-      margin-top: 15px;
-    
-  }
-  #boutoncommander{
-      margin-top: 25px;
-   padding:20px;
-   font-size: 17px ;
-  }
-  #nom,#prenom,#ville,#adresse,#mail{
-width:80%;
-margin-left: -20px;
-margin-right: 10px;
-  }
-  
-//Page confirmation commande
-#container-recapitulatif-commande{
-    margin:auto;
-    text-align: center;
-    color: white;
-    font-size: 18px;
-}
-#retouracceuil{
-    display:flex;
-    justify-content: center;
-    box-shadow: $box-shadow-r;
-    background-color: $violet;
-    padding:15px;
-    width: fit-content;
-    margin: auto;
-    margin-top: 50px;
-    font-size: 18px; 
-    border-radius: 30px;
-}
-#retouracceuil i{
-    margin-right: 10px;
-}
-
-#retouracceuil:hover {
-    background-color: $rose;
-    box-shadow: $box-shadow-v;
-}
-#idcommande{
-    margin:auto;
-    margin-bottom: 18px;
-    border:3px $violet solid;
-    border-radius: 5px;
-    width:fit-content;
-    padding:5px;
-
-
-}
-
-  
-  
-
 @media screen and (max-width: 1024px) {
     .navbar {
         padding-left: 20px;
         margin: 0;
         padding: 0;
     }
+
     #produit {
         flex-direction: row;
         flex-wrap: wrap;
         margin-top: 30px;
     }
+
     .cartedesc {
         margin: 0;
-        height:auto;
+        height: auto;
     }
+
     #cameras,
     #cameras2 {
         flex-direction: row;
@@ -450,6 +472,7 @@ margin-right: 10px;
     .liens {
         margin: 5px;
     }
+
     #cameras,
     #cameras2 {
         flex-direction: row;
@@ -465,7 +488,6 @@ margin-right: 10px;
     }
 
     footer ul {
-
         padding: 10px;
         text-align: left;
         margin: 0;
@@ -474,50 +496,54 @@ margin-right: 10px;
     footer li {
         text-align: center;
     }
-    #panier{
-        display:flex;
+
+    #panier {
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
-    #paniergauche{
-        min-height: 170px;  
+
+    #paniergauche {
+        min-height: 170px;
     }
-    #paniergauche,#panierdroite{
+
+    #paniergauche,
+    #panierdroite {
         width: 100%;
-        margin:auto;
+        margin: auto;
         height: fit-content;
-        
     }
-    #btnsuppr{
+
+    #btnsuppr {
         margin-top: 10px;
         margin-bottom: 15px;
-        width:100%;
+        width: 100%;
     }
 }
-
-
 
 @media screen and (max-width: 550px) {
     .navliens {
         flex-wrap: nowrap;
         flex-direction: column;
     }
-#lignecommande{
-    display:flex;
-    flex-direction: column;
-    margin-right: 80px;
-    margin-left:80px;
-}
-#nomarticle,#prixarticle,#quantite,#option {
-    width:100%;
-    display:flex;
-    justify-content: space-between;
-   
-  
-}
-h4{
-    margin-top: 1px;
-   
-}
 
+    #lignecommande {
+        display: flex;
+        flex-direction: column;
+        margin-right: 80px;
+        margin-left: 80px;
+    }
+
+    #nomarticle,
+    #prixarticle,
+    #quantite,
+    #option {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    h4 {
+        margin-top: 1px;
+    }
 }

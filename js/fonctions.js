@@ -102,7 +102,7 @@ const getCamerasById = () => {
         // Récuperation du prix
         let balisePrix = document.getElementById("prix");
         balisePrix.innerHTML = dataCamera.price;
-        balisePrix.textContent = "Prix : "+ dataCamera.price / 100 + " €";
+        balisePrix.textContent = "Prix : " + dataCamera.price / 100 + " €";
 
         //***** GESTION DU PANIER *****//
 
@@ -214,7 +214,7 @@ const validForm = () => {
 
         //message erreur
         let messagErreur = "";
-        
+
         //Test du nom 
         if (regexNombre.test(formNom) == true || regexSpecial.test(formNom) == true || formNom == "") {
             messagErreur = "Nom incorrect";
@@ -251,10 +251,10 @@ const validForm = () => {
         }
         //verifie si le panier contient au moins un produit
         let valeurPanier = JSON.parse(localStorage.getItem("produit"));
-        if(valeurPanier.length < 1 ){
+        if (valeurPanier.length < 1) {
             console.log("le localStorage ne contient pas de panier")
             alert("Votre panier est vide");
-        } 
+        }
         //Si tout est ok création de l'objet contact
         else {
             contact = {
@@ -265,15 +265,16 @@ const validForm = () => {
                 email: formMail
             };
             const products = produitLocalStorage.map((produit) => produit.idproduit);
-            const aEnvoyer = {  
+            const aEnvoyer = {
                 contact,
-                products: products 
+                products: products
             };
             envoiServeur(aEnvoyer);
             return contact;
         };
     })
 }
+
 function envoiServeur(aEnvoyer) {
     //Envoi du formulaire
     const promise = fetch('http://localhost:3000/api/cameras/order', {
@@ -301,7 +302,7 @@ function envoiServeur(aEnvoyer) {
                 localStorage.setItem("responseId", contenu.orderId);
                 //aller vers la page de confimation de commande
                 window.location = "confirmation-commande.html";
-                
+
             } else {
                 alert("probleme avec le serveur")
             };
@@ -312,17 +313,17 @@ function envoiServeur(aEnvoyer) {
     });
 }
 const validCommande = () => {
-// recuperation de l'id de la commande dans le local storage
-const responseId = localStorage.getItem("responseId");
-console.log(`responseId : ${responseId}`);
+    // recuperation de l'id de la commande dans le local storage
+    const responseId = localStorage.getItem("responseId");
+    console.log(`responseId : ${responseId}`);
 
-//injection de l'id commande dans le html
-document.getElementById("idcommande").innerHTML = responseId;
+    //injection de l'id commande dans le html
+    document.getElementById("idcommande").innerHTML = responseId;
 
-//effacer local storage 
-function enleverCleLocalStorage(key){
-    localStorage.removeItem(key);
-};
-enleverCleLocalStorage("responseId");
-enleverCleLocalStorage("produit");
+    //effacer local storage 
+    function enleverCleLocalStorage(key) {
+        localStorage.removeItem(key);
+    };
+    enleverCleLocalStorage("responseId");
+    enleverCleLocalStorage("produit");
 }

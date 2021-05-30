@@ -36,17 +36,17 @@
     <div id="panier">
         <div id="paniergauche">
             <h3>MON PANIER</h3>
-               <div id="paniervide"></div>
-            <div id= "lignecommande">
-            <div id = "nomarticle"></div>
-            <div id = "quantite"></div>
-            <div id = "prixarticle"></div>
+            <div id="paniervide"></div>
+            <div id="lignecommande">
+                <div id="nomarticle"></div>
+                <div id="quantite"></div>
+                <div id="prixarticle"></div>
+            </div>
+
         </div>
-        
-    </div>
         <div id="panierdroite">
             <h3>TOTAL</h3>
-            <div id = "prixtotal">prix total</div>
+            <div id="prixtotal">prix total</div>
             <form>
                 <div id="formflex">
                     <label for="nom">Nom :</label>
@@ -70,11 +70,11 @@
                 </div>
                 <div id="btncomdiv">
                     <button id="boutoncommander" type="submit">Commander</button>
-                  </div>
+                </div>
             </form>
         </div>
     </div>
-    
+
     <footer>
         <ul>
             <li class=""><a href="#">Conditions générales de vente</a></li>
@@ -89,11 +89,17 @@
         </ul>
     </footer>
     <script type="text/javascript" src="../js/fonctions.js"></script>
-    <script>panierGauche ();</script>
-    <script>calculPrix ();</script>
-    <script>validForm()</script>
-    
-   
+    <script>
+        panierGauche();
+    </script>
+    <script>
+        calculPrix();
+    </script>
+    <script>
+        validForm()
+    </script>
+
+
 </body>
 
 </html>
