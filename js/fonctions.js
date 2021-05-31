@@ -191,88 +191,90 @@ supprimerProduit = (i) => {
 };
 //***** FORMULAIRE *****//
 
-const validForm = () => {
+const addClickFormListener = () => {
     //selection du bouton d'envoi du formulaire
     const btnForm = document.getElementById("btncomdiv");
 
-    btnForm.addEventListener("click", (e) => {
-        e.preventDefault();
+    btnForm.addEventListener("click", validForm)
+    
+}
+const validForm = (event) => {
+    event.preventDefault();
 
-        //vérifie les inputs du formulaire
+    //vérifie les inputs du formulaire
 
-        //Controle Regex
-        let regexNombre = /[0-9]/;
-        let regexMail = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        let regexSpecial = /[§!@#$%^&*(),.?":{}|<>]/;
+    //Controle Regex
+    let regexNombre = /[0-9]/;
+    let regexMail = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    let regexSpecial = /[§!@#$%^&*(),.?":{}|<>]/;
 
-        //Récupération des entrées
-        let formNom = document.getElementById("nom").value;
-        let formPrenom = document.getElementById("prenom").value;
-        let formMail = document.getElementById("mail").value;
-        let formAdresse = document.getElementById("adresse").value;
-        let formVille = document.getElementById("ville").value;
+    //Récupération des entrées
+    let formNom = document.getElementById("nom").value;
+    let formPrenom = document.getElementById("prenom").value;
+    let formMail = document.getElementById("mail").value;
+    let formAdresse = document.getElementById("adresse").value;
+    let formVille = document.getElementById("ville").value;
 
-        //message erreur
-        let messagErreur = "";
+    //message erreur
+    let messagErreur = "";
 
-        //Test du nom 
-        if (regexNombre.test(formNom) == true || regexSpecial.test(formNom) == true || formNom == "") {
-            messagErreur = "Nom incorrect";
-        } else {
-            console.log("Nom ok");
+    //Test du nom 
+    if (regexNombre.test(formNom) == true || regexSpecial.test(formNom) == true || formNom == "") {
+        messagErreur = "Nom incorrect";
+    } else {
+        console.log("Nom ok");
+    };
+    //Test du prénom 
+    if (regexNombre.test(formPrenom) == true || regexSpecial.test(formPrenom) == true || formPrenom == "") {
+        messagErreur = "Prénom incorrect";
+    } else {
+        console.log("Prénom ok");
+    };
+    //Test de l'adresse mail
+    if (regexMail.test(formMail) == false) {
+        messagErreur = "Email incorrect";
+    } else {
+        console.log("Adresse mail ok");
+    };
+    //Test de l'adresse 
+    if (regexSpecial.test(formAdresse) == true || formAdresse == "") {
+        messagErreur = "Adresse incorrect";
+    } else {
+        console.log("Adresse ok");
+    };
+    //Test de la ville 
+    if (regexNombre.test(formVille) == true || regexSpecial.test(formVille) == true || formVille == "") {
+        messagErreur = "Ville incorrect"
+    } else {
+        console.log("Ville ok")
+    };
+    //Si une entrée est incorect, message d'alert avec la raison
+    if (messagErreur != "") {
+        alert("Verifier : " + messagErreur);
+    }
+    //verifie si le panier contient au moins un produit
+    let valeurPanier = JSON.parse(localStorage.getItem("produit"));
+    if (valeurPanier.length < 1) {
+        console.log("le localStorage ne contient pas de panier")
+        alert("Votre panier est vide");
+    }
+    //Si tout est ok création de l'objet contact
+    else {
+        contact = {
+            firstName: formNom,
+            lastName: formPrenom,
+            address: formAdresse,
+            city: formVille,
+            email: formMail
         };
-        //Test du prénom 
-        if (regexNombre.test(formPrenom) == true || regexSpecial.test(formPrenom) == true || formPrenom == "") {
-            messagErreur = "Prénom incorrect";
-        } else {
-            console.log("Prénom ok");
+        const products = produitLocalStorage.map((produit) => produit.idproduit);
+        const aEnvoyer = {
+            contact,
+            products: products
         };
-        //Test de l'adresse mail
-        if (regexMail.test(formMail) == false) {
-            messagErreur = "Email incorrect";
-        } else {
-            console.log("Adresse mail ok");
-        };
-        //Test de l'adresse 
-        if (regexSpecial.test(formAdresse) == true || formAdresse == "") {
-            messagErreur = "Adresse incorrect";
-        } else {
-            console.log("Adresse ok");
-        };
-        //Test de la ville 
-        if (regexNombre.test(formVille) == true || regexSpecial.test(formVille) == true || formVille == "") {
-            messagErreur = "Ville incorrect"
-        } else {
-            console.log("Ville ok")
-        };
-        //Si une entrée est incorect, message d'alert avec la raison
-        if (messagErreur != "") {
-            alert("Verifier : " + messagErreur);
-        }
-        //verifie si le panier contient au moins un produit
-        let valeurPanier = JSON.parse(localStorage.getItem("produit"));
-        if (valeurPanier.length < 1) {
-            console.log("le localStorage ne contient pas de panier")
-            alert("Votre panier est vide");
-        }
-        //Si tout est ok création de l'objet contact
-        else {
-            contact = {
-                firstName: formNom,
-                lastName: formPrenom,
-                address: formAdresse,
-                city: formVille,
-                email: formMail
-            };
-            const products = produitLocalStorage.map((produit) => produit.idproduit);
-            const aEnvoyer = {
-                contact,
-                products: products
-            };
-            envoiServeur(aEnvoyer);
-            return contact;
-        };
-    })
+        envoiServeur(aEnvoyer);
+        return contact;
+    };
 }
 
 function envoiServeur(aEnvoyer) {
@@ -327,3 +329,4 @@ const validCommande = () => {
     enleverCleLocalStorage("responseId");
     enleverCleLocalStorage("produit");
 }
+module.exports = {validForm,validCommande}
