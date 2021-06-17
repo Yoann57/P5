@@ -1,14 +1,13 @@
 //Déclaration de la variable "produitLocalStorage" dans laquelle on met les keys et les values qui sont dans le local storage
 //JSON.parse pour convertir les données au format JSON qui sont dans le local storage en objet Javascript
 let produitLocalStorage = JSON.parse(localStorage.getItem("produit"));
-console.log(produitLocalStorage);
+
 //***** INDEX *****//
 //Récuperation des données de l'index
 const getCameras = () => {
     fetch('http://localhost:3000/api/cameras').then((reponse) => {
         return reponse.json()
     }).then((dataCamera) => {
-        console.log(dataCamera)
         dataCamera.forEach(d => creerCartePhoto(d))
     }).catch((error) => {
         console.log(error)
@@ -57,7 +56,6 @@ const getCamerasById = () => {
     let url_string = window.location.href;
     let url = new URL(url_string);
     let id = url.searchParams.get("id");
-    console.log(id);
 
     //Récuperation Produits par l'ID
     fetch(`http://localhost:3000/api/cameras/${id}`).then((reponse) => {
@@ -101,7 +99,6 @@ const getCamerasById = () => {
 
         //Séléction du bouton Ajouter  au panier
         const btnPanier = document.querySelector("#button");
-        console.log(btnPanier);
 
         //Ecouter le bouton et envoyer le panier
         btnPanier.addEventListener("click", (event) => {
@@ -116,8 +113,6 @@ const getCamerasById = () => {
                 quantité: quantity.value,
                 prix: dataCamera.price
             }
-            console.log(optionsProduit);
-
             //***** LOCAL STORAGE *****//
 
             //S'il n'y a pas de produits enregistré dans le local storage,crée un tableau
@@ -126,15 +121,12 @@ const getCamerasById = () => {
             }
             produitLocalStorage.push(optionsProduit);
             localStorage.setItem("produit", JSON.stringify(produitLocalStorage));
-            console.log(produitLocalStorage);
         });
-        console.log(dataCamera)
     }).catch((error) => {
         alert("problème réseau")
         console.log(error)
     })
 }
-
 // Affichage des produits du panier
 const panierGauche = () => {
     document.getElementById("titrepanier");
@@ -163,7 +155,6 @@ let calculPrix = () => {
         totalPrix += p.prix * p.quantité;
     });
     //Affichage du prix total à payer dans l'addition
-    console.log(totalPrix);
     document.getElementById("prixtotal").textContent = totalPrix / 100 + " €";
 }
 //*** Supprimer un produit du panier ***//
@@ -244,7 +235,6 @@ const validForm = (event) => {
     //verifie si le panier contient au moins un produit
     let valeurPanier = JSON.parse(localStorage.getItem("produit"));
     if (valeurPanier.length < 1) {
-        console.log("le localStorage ne contient pas de panier")
         alert("Votre panier est vide");
     }
     //Si tout est ok création de l'objet contact
@@ -281,8 +271,6 @@ function envoiServeur(aEnvoyer) {
         //si la promesse est rejeté
         try {
             const contenu = await response.json();
-            console.log("contenu de response");
-            console.log(contenu);
 
             if (response.ok) {
                 console.log("resultat de response.ok");
