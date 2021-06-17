@@ -1,14 +1,3 @@
-//Timer page d'erreur 404
-const timer404 = () => {
-    setInterval(function () {
-        var div = document.querySelector("#counter");
-        var count = div.textContent * 1 - 1;
-        div.textContent = count;
-        if (count <= 0) {
-            window.location.replace("../index.html");
-        }
-    }, 1000);
-}
 //Déclaration de la variable "produitLocalStorage" dans laquelle on met les keys et les values qui sont dans le local storage
 //JSON.parse pour convertir les données au format JSON qui sont dans le local storage en objet Javascript
 let produitLocalStorage = JSON.parse(localStorage.getItem("produit"));
@@ -26,28 +15,28 @@ const getCameras = () => {
     })
     //Creation de la carte
     function creerCartePhoto(d) {
-        var carte = document.createElement("div");
+        let carte = document.createElement("div");
         carte.classList.add('carte');
 
         //Création de l'image    
-        var baliseImage = document.createElement("img");
+        let baliseImage = document.createElement("img");
         baliseImage.setAttribute("src", d.imageUrl);
         baliseImage.classList.add('image');
 
         //Création du nom
-        var baliseName = document.createElement("name");
+        let baliseName = document.createElement("name");
         baliseName.innerHTML = d.name;
         baliseName.classList.add('carte-strong');
 
         //Création du prix
-        var balisePrice = document.createElement("price");
+        let balisePrice = document.createElement("price");
         balisePrice.innerHTML = d.price;
         balisePrice.classList.add("carte-p");
         balisePrice.textContent = d.price / 100 + " €";
 
         //Ajout du boutton
-        var btn = document.createElement("BUTTON");
-        var t = document.createTextNode("Voir le produit");
+        let btn = document.createElement("BUTTON");
+        let t = document.createTextNode("Voir le produit");
         btn.appendChild(t);
         btn.classList.add("voirprod");
         btn.onclick = function () {
@@ -62,14 +51,14 @@ const getCameras = () => {
         document.getElementById("cameras").appendChild(carte);
     }
 }
+//***** PRODUITS *****//
 //Récuperation de l'ID produit
 const getCamerasById = () => {
-    var url_string = window.location.href;
-    var url = new URL(url_string);
-    var id = url.searchParams.get("id");
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+    let id = url.searchParams.get("id");
     console.log(id);
 
-    //***** PRODUITS *****//
     //Récuperation Produits par l'ID
     fetch(`http://localhost:3000/api/cameras/${id}`).then((reponse) => {
 
@@ -166,7 +155,7 @@ const panierGauche = () => {
         document.getElementById("lignecommande").innerHTML = produitHtml;
     }
 }
-var calculPrix = () => {
+let calculPrix = () => {
     //Calcule de l'addition total
     let totalPrix = 0;
     produitLocalStorage.forEach((p) => {
@@ -194,9 +183,8 @@ supprimerProduit = (i) => {
 const addClickFormListener = () => {
     //selection du bouton d'envoi du formulaire
     const btnForm = document.getElementById("btncomdiv");
-
+    //au click ouvre validFOrm
     btnForm.addEventListener("click", validForm)
-    
 }
 const validForm = (event) => {
     event.preventDefault();
@@ -251,6 +239,7 @@ const validForm = (event) => {
     //Si une entrée est incorect, message d'alert avec la raison
     if (messagErreur != "") {
         alert("Verifier : " + messagErreur);
+        return;
     }
     //verifie si le panier contient au moins un produit
     let valeurPanier = JSON.parse(localStorage.getItem("produit"));
@@ -329,4 +318,15 @@ const validCommande = () => {
     enleverCleLocalStorage("responseId");
     enleverCleLocalStorage("produit");
 }
-module.exports = {validForm,validCommande}
+
+//Timer page d'erreur 404
+const timer404 = () => {
+    setInterval(function () {
+        let div = document.querySelector("#counter");
+        let count = div.textContent * 1 - 1;
+        div.textContent = count;
+        if (count <= 0) {
+            window.location.replace("../index.html");
+        }
+    }, 1000);
+}

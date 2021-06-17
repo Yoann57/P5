@@ -119,6 +119,7 @@ h5 {
 
 .image {
     height: auto;
+    min-height: 233px;
     max-width: 100%;
     width: 350px;
     margin-bottom: 10px;
@@ -199,6 +200,7 @@ footer :hover a {
 
 .imageproduit {
     height: auto;
+    min-height: 333px;
     max-width: 100%;
     background-size: cover;
     background-position: center;
@@ -324,7 +326,11 @@ label {
     width: 95px;
 }
 
-#formflex {
+#formflex,
+#formflex2,
+#formflex3,
+#formflex4,
+#formflex5 {
     display: flex;
     margin-top: 15px;
 }
@@ -545,5 +551,10 @@ label {
 
     h4 {
         margin-top: 1px;
+    }
+
+    .image,
+    .imageproduit {
+        min-height: 0px;
     }
 }

@@ -49,7 +49,8 @@ body {
   font-size: 20px;
 }
 
-.liens, #retouracceuil {
+.liens,
+#retouracceuil {
   text-decoration: none;
   margin-left: 60px;
   color: white;
@@ -150,6 +151,7 @@ h5 {
 
 .image {
   height: auto;
+  min-height: 233px;
   max-width: 100%;
   width: 350px;
   margin-bottom: 10px;
@@ -204,7 +206,7 @@ footer :hover a {
   color: #f79a44;
 }
 
-/* Page details produit */
+/****** PAGE DETAILS PRODUIT ******/
 #produit {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -235,6 +237,7 @@ footer :hover a {
 
 .imageproduit {
   height: auto;
+  min-height: 333px;
   max-width: 100%;
   background-size: cover;
   background-position: center;
@@ -243,7 +246,8 @@ footer :hover a {
 }
 
 button,
-input, #boutoncommander {
+input,
+#boutoncommander {
   border-radius: 5px;
   background-color: #a249aa;
   -webkit-box-shadow: 1px 2px 2px #8014d2;
@@ -256,7 +260,8 @@ input, #boutoncommander {
 }
 
 button:hover,
-input:hover, #boutoncommander:hover {
+input:hover,
+#boutoncommander:hover {
   background-color: #8014d2;
   -webkit-box-shadow: 1px 2px 2px #a249aa;
           box-shadow: 1px 2px 2px #a249aa;
@@ -295,55 +300,7 @@ select {
           box-shadow: 1px 2px 2px #a249aa;
 }
 
-/* Page Erreur 404 */
-#erreur404 {
-  text-align: center;
-}
-
-.oups {
-  font-size: 80px;
-  color: #ffffff;
-}
-
-.pagenotfound {
-  font-size: 40px;
-  margin-bottom: 40px;
-  color: #ffffff;
-}
-
-.fleche {
-  font-size: 80px;
-  color: #ffffff;
-}
-
-.btnretour {
-  -webkit-box-shadow: 1px 2px 2px #a249aa;
-          box-shadow: 1px 2px 2px #a249aa;
-  padding: 25px;
-  font-size: 25px;
-  border-radius: 50px;
-}
-
-.btnretour {
-  background-color: #a249aa;
-  -webkit-box-shadow: 1px 2px 2px #8014d2;
-          box-shadow: 1px 2px 2px #8014d2;
-}
-
-.txtredirige {
-  text-align: center;
-  color: #ffffff;
-  margin-top: 45px;
-  font-size: 20px;
-}
-
-#counter {
-  text-align: center;
-  color: #ffffff;
-  font-size: 20px;
-}
-
-/* Page Panier */
+/****** PAGE PANIER ******/
 #panier {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -374,7 +331,10 @@ select {
   margin: 10px;
 }
 
-#nomarticle, #prixarticle, #quantite, #option {
+#nomarticle,
+#prixarticle,
+#quantite,
+#option {
   width: 20%;
 }
 
@@ -402,7 +362,7 @@ select {
   text-align: center;
 }
 
-/*Formulaire*/
+/****** FORMULAIRE ******/
 form {
   margin: 0 auto;
   padding: 10px;
@@ -417,7 +377,7 @@ label {
   width: 95px;
 }
 
-#formflex {
+#formflex, #formflex2, #formflex3, #formflex4, #formflex5 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -430,12 +390,17 @@ label {
   font-size: 17px;
 }
 
-#nom, #prenom, #ville, #adresse, #mail {
+#nom,
+#prenom,
+#ville,
+#adresse,
+#mail {
   width: 80%;
   margin-left: -20px;
   margin-right: 10px;
 }
 
+/**** PAGE CONFIRMATION COMMANDE ****/
 #container-recapitulatif-commande {
   margin: auto;
   text-align: center;
@@ -482,6 +447,54 @@ label {
   width: -moz-fit-content;
   width: fit-content;
   padding: 5px;
+}
+
+/****** PAGE ERREUR 404 ******/
+#erreur404 {
+  text-align: center;
+}
+
+.oups {
+  font-size: 80px;
+  color: #ffffff;
+}
+
+.pagenotfound {
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.fleche {
+  font-size: 80px;
+  color: #ffffff;
+}
+
+.btnretour {
+  -webkit-box-shadow: 1px 2px 2px #a249aa;
+          box-shadow: 1px 2px 2px #a249aa;
+  padding: 25px;
+  font-size: 25px;
+  border-radius: 50px;
+}
+
+.btnretour {
+  background-color: #a249aa;
+  -webkit-box-shadow: 1px 2px 2px #8014d2;
+          box-shadow: 1px 2px 2px #8014d2;
+}
+
+.txtredirige {
+  text-align: center;
+  color: #ffffff;
+  margin-top: 45px;
+  font-size: 20px;
+}
+
+#counter {
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -572,7 +585,8 @@ label {
   #paniergauche {
     min-height: 170px;
   }
-  #paniergauche, #panierdroite {
+  #paniergauche,
+  #panierdroite {
     width: 100%;
     margin: auto;
     height: -webkit-fit-content;
@@ -606,7 +620,10 @@ label {
     margin-right: 80px;
     margin-left: 80px;
   }
-  #nomarticle, #prixarticle, #quantite, #option {
+  #nomarticle,
+  #prixarticle,
+  #quantite,
+  #option {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -617,6 +634,9 @@ label {
   }
   h4 {
     margin-top: 1px;
+  }
+  .image, .imageproduit {
+    min-height: 0px;
   }
 }
 /*# sourceMappingURL=style.css.map */
